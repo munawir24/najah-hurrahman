@@ -230,9 +230,6 @@
                 <div class="pb-3 row justify-content-center">
                     <div class="pt-2 mb-1 col-12 col-md-5 col-sm-5">
                         <h5 class="text-center">Hubungi Kami</h5>
-                        <center>
-                            <img src="{{ asset('img/slogan.png') }}" alt="slogan" style="width: 50%;">
-                        </center>
                         <div>Silahkan menghubungi kami pada kontak di bawah ini :</div>
                         <div><i class="fas fa-map-marked-alt"></i> Jl. A. Yani No. 25 Rt. 17, Kel Baru, Pangkalan Bun,
                             Kotawaringin Barat, Kalimantan Tengah</div>
