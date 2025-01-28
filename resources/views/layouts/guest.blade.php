@@ -189,8 +189,8 @@
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse text-center" id="navbarNav">
-                    <ul class="navbar-nav ms-auto text-center">
+                <div class="text-center collapse navbar-collapse" id="navbarNav">
+                    <ul class="text-center navbar-nav ms-auto">
                         <li class="nav-item {{ request()->is('/') ? 'active' : '' }}"><a
                                 class="nav-link {{ request()->is('/') ? 'active' : '' }}"
                                 href="{{ url('/') }}">Beranda</a></li>
@@ -225,10 +225,10 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-        <div class="main-footer border-0 mt-2" style="background: #ffed93;">
+        <div class="mt-2 border-0 main-footer" style="background: #ffed93;">
             <div class="container text-dark">
-                <div class="row justify-content-center pb-3">
-                    <div class="col-12 col-md-5 col-sm-5 mb-1 pt-2">
+                <div class="pb-3 row justify-content-center">
+                    <div class="pt-2 mb-1 col-12 col-md-5 col-sm-5">
                         <h5 class="text-center">Hubungi Kami</h5>
                         <center>
                             <img src="{{ asset('img/slogan.png') }}" alt="slogan" style="width: 50%;">
@@ -240,7 +240,7 @@
                                 style="text-decoration: none"><i class="fab fa-whatsapp"></i> 0822 4222 1330</a>
                         </div>
                     </div>
-                    <div class="col-12 col-md-5 col-sm-5 mb-1">
+                    <div class="mb-1 col-12 col-md-5 col-sm-5">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4739.575104043583!2d111.64626477823457!3d-2.668541581995166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e08ee1390b41e1b%3A0x4f56cdb651f877c5!2sPt.%20Najah%20Hurrahman!5e0!3m2!1sid!2sid!4v1737863503251!5m2!1sid!2sid"
                             width="100%" height="200" style="border-radius: 5px; border: 2px solid #000000;"
@@ -249,24 +249,24 @@
                     </div>
                 </div>
                 <h5 class="text-center">Temukan kami di:</h5>
-                <div class="row justify-content-center pb-4 pt-1">
-                    <div class="col-md-1 col-sm-1 col-2 text-center"><a class="nav-link"
+                <div class="pt-1 pb-4 row justify-content-center">
+                    <div class="text-center col-md-1 col-sm-1 col-2"><a class="nav-link"
                             href="https://www.instagram.com/najah_hurrahman" target="_blank"
                             style="background: linear-gradient(to bottom, #6d00fc, #a004fa, #f925b2, #ff5722, #eeff00, #ff9d00);
                                     -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><i
                                 class="fab fa-instagram fa-2xl"></i></a></div>
-                    <div class="col-md-1 col-sm-1 col-2 text-center"><a class="nav-link text-dark"
+                    <div class="text-center col-md-1 col-sm-1 col-2"><a class="nav-link text-dark"
                             href="https://www.tiktok.com/@najah.hurrahman" target="_blank">
                             <i class="fa-brands fa-tiktok fa-2xl"></i></a></div>
-                    <div class="col-md-1 col-sm-1 col-2 text-center"><a class="nav-link text-primary"
+                    <div class="text-center col-md-1 col-sm-1 col-2"><a class="nav-link text-primary"
                             href="https://web.facebook.com/100011636550477" target="_blank"><i
                                 class="fab fa-facebook fa-2xl"></i></a></div>
-                    <div class="col-md-1 col-sm-1 col-2 text-center"><a class="nav-link text-success"
-                            href="https://api.whatsapp.com/send?phone=6282251925522" target="_blank"><i
+                    <div class="text-center col-md-1 col-sm-1 col-2"><a class="nav-link text-success"
+                            href="https://api.whatsapp.com/send?phone=6282242221330" target="_blank"><i
                                 class="fab fa-whatsapp fa-2xl"></i></a></div>
                 </div>
             </div>
-            <footer class="main-footer bg-warning rounded-sm text-center" hidden>
+            <footer class="text-center rounded-sm main-footer bg-warning" hidden>
                 <!-- To the right -->
                 {{-- <div class="float-right d-none d-sm-inline">
                     Bismillah
