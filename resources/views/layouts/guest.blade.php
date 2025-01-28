@@ -182,7 +182,7 @@
     <div class="wrapper">
         <nav class="navbar navbar-expand-lg navbar-fixed">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{ asset('img/logo najah.png') }}" alt="LOGO NH" class=""
                         style="width: 300px;"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
