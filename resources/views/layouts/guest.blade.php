@@ -8,10 +8,29 @@
     <title>@yield('title')</title>
     <link rel="icon" href="{{ asset('img/logo.ico') }}" type="icon">
 
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WK8H9PW8');
+    </script>
+    <!-- End Google Tag Manager -->
     {{-- <link href="{{ asset('bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet"> --}}
     {{-- <link rel="stylesheet" href="{{asset('admin/dist/css/adminlte.min.css')}}"> --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
+
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 
@@ -282,6 +301,10 @@
     {{-- <script src="{{ asset('bootstrap/dist/js/bootstrap.min.js') }}"></script> --}}
     {{-- <script src="{{ asset('bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script> --}}
     {{-- <script src="{{asset('admin/build/js/AdminLTE.js')}}"></script> --}}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK8H9PW8" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-52CT4V3GEZ"></script>
     <script>
