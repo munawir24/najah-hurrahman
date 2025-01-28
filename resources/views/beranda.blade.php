@@ -141,8 +141,7 @@
                     style="background: linear-gradient(to bottom, #FFD500 0%, #FFD500 50%, #FFD500 100%);">
                     <div class="card-body">
                         <center>
-                            <h1 class="text-dark pt-3" style="font-size: clamp(25px, 3vw, 40px);">Cek Legalitas kami di
-                                Kemenag RI
+                            <h1 class="text-dark pt-3" style="font-size: clamp(25px, 3vw, 40px);">TRAVEL BERIZIN PERTAMA DOMISILI DI KALIMANTAN TENGAH
                             </h1>
                         </center>
                         <div class="row justify-content-center" style="font-size: 14pt">
