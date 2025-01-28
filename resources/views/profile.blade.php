@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('title')
-    Profile Najah Hurrahman
+    Profile PT. Najah Hurrahman
 @endsection
 
 @section('css')
@@ -13,7 +13,7 @@
         <div class="row">
             <!-- /.col-md-12 -->
             <div class="col-lg-12">
-                <div class="card mt-2" style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: 14pt;">
+                <div class="mt-2 card" style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: 14pt;">
                     <div class="card-body" style="text-align: justify;">
                         <center>
                             <h2>Profile</h2>
@@ -62,7 +62,7 @@
                             </div>
                             <div class="col-md-4 col-sm-4 col-12">
                                 <div class="row justify-content-center">
-                                    <div class="col-12 text-center"><img src="{{ asset('img/rahman.jpg') }}" alt="rahman"
+                                    <div class="text-center col-12"><img src="{{ asset('img/rahman.jpg') }}" alt="rahman"
                                             style="height: 35vh; border: 2px double black; border-radius: 5px;">
                                         <p>MUHAMMAD RAKHMAN (DIREKTUR)</p>
                                     </div>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card mt-2" style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: 14pt;">
+                <div class="mt-2 card" style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: 14pt;">
                     <div class="card-body" style="text-align: justify;">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-12">
@@ -132,8 +132,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="card mt-2" style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: 14pt;">
-                    <div class="card-body mb-2" style="text-align: justify;">
+                <div class="mt-2 card" style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: 14pt;">
+                    <div class="mb-2 card-body" style="text-align: justify;">
                         <center>
                             <h2>Kelebihan PT. Najah Hurrahman</h2>
                         </center>

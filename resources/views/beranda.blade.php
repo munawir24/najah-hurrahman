@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('title')
-    Najah Hurrahman
+    PT. Najah Hurrahman - Umroh & Haji Plus
 @endsection
 
 @section('css')
@@ -10,8 +10,8 @@
 
 @section('content')
     <!-- Container untuk slideshow -->
-    <div class="container mb-3 p-1 rounded-sm" style="background-color: #FFBD59" hidden>
-        <div id="myCarousel" class="carousel slide rounded-sm" data-bs-ride="carousel">
+    <div class="container p-1 mb-3 rounded-sm" style="background-color: #FFBD59" hidden>
+        <div id="myCarousel" class="rounded-sm carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 {{-- Slide PSB --}}
                 <div class="carousel-item active">
@@ -95,7 +95,7 @@
                         </center>
                     </div>
                 </div>
-                <div class="card mt-2" style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: 14pt;">
+                <div class="mt-2 card" style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: 14pt;">
                     <div class="card-body" style="text-align: justify;">
                         <center>
                             <h2>Tentang Najah Hurrahman</h2>
@@ -113,16 +113,16 @@
                             </div>
                             <div class="col-md-6 col-sm-6 col-12">
                                 <ol><b>Pelayanan :</b>
-                                    <li>Pendampingan Pembuatan Paspor <i class="fas fa-check-circle	text-success"></i></li>
-                                    <li>Pembuatan Visa <i class="fas fa-check-circle	text-success"></i></li>
-                                    <li>Pemesanan Tiket Pesawat <i class="fas fa-check-circle	text-success"></i></li>
-                                    <li>Akomodasi <i class="fas fa-check-circle	text-success"></i></li>
-                                    <li>Transportasi Lokal <i class="fas fa-check-circle	text-success"></i></li>
-                                    <li>Pembimbing Haji dan Umrah <i class="fas fa-check-circle	text-success"></i></li>
-                                    <li>Manajemen Perjalanan <i class="fas fa-check-circle	text-success"></i></li>
+                                    <li>Pendampingan Pembuatan Paspor <i class="fas fa-check-circle text-success"></i></li>
+                                    <li>Pembuatan Visa <i class="fas fa-check-circle text-success"></i></li>
+                                    <li>Pemesanan Tiket Pesawat <i class="fas fa-check-circle text-success"></i></li>
+                                    <li>Akomodasi <i class="fas fa-check-circle text-success"></i></li>
+                                    <li>Transportasi Lokal <i class="fas fa-check-circle text-success"></i></li>
+                                    <li>Pembimbing Haji dan Umrah <i class="fas fa-check-circle text-success"></i></li>
+                                    <li>Manajemen Perjalanan <i class="fas fa-check-circle text-success"></i></li>
                                 </ol>
                             </div>
-                            <div class="col-6 text-center">
+                            <div class="text-center col-6">
                                 <a href="" class="btn btn-sm btn-dark">Profil Lengkap</a>
                             </div>
                         </div>
@@ -141,27 +141,27 @@
                     style="background: linear-gradient(to bottom, #FFD500 0%, #FFD500 50%, #FFD500 100%);">
                     <div class="card-body">
                         <center>
-                            <h1 class="text-dark pt-3" style="font-size: clamp(25px, 3vw, 40px);">TRAVEL BERIZIN PERTAMA DOMISILI DI KALIMANTAN TENGAH
+                            <h1 class="pt-3 text-dark" style="font-size: clamp(25px, 3vw, 40px);">TRAVEL BERIZIN PERTAMA DOMISILI DI KALIMANTAN TENGAH
                             </h1>
                         </center>
                         <div class="row justify-content-center" style="font-size: 14pt">
-                            <div class="col-lg-7 col-md-7 col-sm-7 col-12 mb-2 text-center">
+                            <div class="mb-2 text-center col-lg-7 col-md-7 col-sm-7 col-12">
                                 <p>PT. NAJAH HURRAHMAN adalah agen haji & umroh resmi yang terdaftar di Kementerian Agama
                                     Republik Indonesia <b>NOMOR 794 TAHUN 2019</b></p>
                             </div>
                         </div>
                         <div class="row justify-content-between">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-4 mb-2 text-center text-bold">
+                            <div class="mb-2 text-center col-lg-4 col-md-4 col-sm-4 col-4 text-bold">
                                 <a href="https://simpu.kemenag.go.id/home/detail/650" target="_blank"
-                                    class="btn btn-md btn-dark text-bold rounded-sm">CEK LEGALITAS</a>
+                                    class="rounded-sm btn btn-md btn-dark text-bold">CEK LEGALITAS</a>
                             </div>
-                            <div class="col-lg-4 col-md-12 col-sm-4 col-4 mb-2 text-center text-bold">
+                            <div class="mb-2 text-center col-lg-4 col-md-12 col-sm-4 col-4 text-bold">
                                 <a href="https://siskopatuh.kemenag.go.id/web/login/" target="_blank"
-                                    class="btn btn-md btn-dark text-bold rounded-sm">SISKOPATUH</a>
+                                    class="rounded-sm btn btn-md btn-dark text-bold">SISKOPATUH</a>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-4 mb-2 text-center text-bold">
+                            <div class="mb-2 text-center col-lg-4 col-md-4 col-sm-4 col-4 text-bold">
                                 <a href="https://haji.kemenag.go.id/sidb/admin/" target="_blank"
-                                    class="btn btn-md btn-dark text-bold rounded-sm">SISKOHAT</a>
+                                    class="rounded-sm btn btn-md btn-dark text-bold">SISKOHAT</a>
                             </div>
                         </div>
                     </div>
@@ -180,17 +180,17 @@
                         <center>
                             <h2>Paket Umroh & Haji</h2>
                         </center>
-                        <div class="row justify-content-center pt-2">
+                        <div class="pt-2 row justify-content-center">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                 <img src="{{ asset('img/haji25.jpg') }}" alt="PAKET HAJI 2025"
                                     style="width: 100%; border-radius: 10px; border: 2px double black;">
-                                <div class="row justify-content-around pt-2 pb-2 mb-5">
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-2 text-center border p-2" style="border-radius: 50%">
+                                <div class="pt-2 pb-2 mb-5 row justify-content-around">
+                                    <div class="p-2 text-center border col-lg-1 col-md-1 col-sm-1 col-2" style="border-radius: 50%">
                                         <a href="telp:082242221330" target="_blank" class="text-dark"
                                             style="text-decoration: none"><i
                                                 class="fas fa-phone fa-2xl text-dark"></i></a>
                                     </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-2 text-center border p-2" style="border-radius: 50%">
+                                    <div class="p-2 text-center border col-lg-1 col-md-1 col-sm-1 col-2" style="border-radius: 50%">
                                         <a href="http://wa.me/6282242221330" target="_blank" class="text-dark"><i
                                                 class="fab fa-whatsapp fa-2xl text-success"></i></a>
                                     </div>
@@ -199,13 +199,13 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                 <img src="{{ asset('img/umroh25-2.jpg') }}" alt="PAKET HAJI 2025"
                                     style="width: 100%; border-radius: 10px; border: 2px double black;">
-                                <div class="row justify-content-around pt-2 pb-2 mb-5">
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-2 text-center border p-2" style="border-radius: 50%">
+                                <div class="pt-2 pb-2 mb-5 row justify-content-around">
+                                    <div class="p-2 text-center border col-lg-1 col-md-1 col-sm-1 col-2" style="border-radius: 50%">
                                         <a href="telp:082242221330" target="_blank" class="text-dark"
                                             style="text-decoration: none"><i
                                                 class="fas fa-phone fa-2xl text-dark"></i></a>
                                     </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-2 text-center border p-2" style="border-radius: 50%">
+                                    <div class="p-2 text-center border col-lg-1 col-md-1 col-sm-1 col-2" style="border-radius: 50%">
                                         <a href="http://wa.me/6282242221330" target="_blank" class="text-dark"><i
                                                 class="fab fa-whatsapp fa-2xl text-success"></i></a>
                                     </div>
@@ -215,7 +215,7 @@
                         <center>
                             <h2>Our Galery</h2>
                         </center>
-                        <div class="row justify-content-center pt-2">
+                        <div class="pt-2 row justify-content-center">
                             <img src="{{ asset('img/galeries/1.jpg') }}" alt="1" class="mb-2"
                                 style="height: 30vh; width: auto; border-radius: 5px;">
                             <img src="{{ asset('img/galeries/2.jpg') }}" alt="2" class="mb-2"
@@ -247,7 +247,7 @@
                             <img src="{{ asset('img/galeries/15.jpg') }}" alt="15" class="mb-2"
                                 style="height: 30vh; width: auto; border-radius: 5px;">
                         </div>
-                        <div class="row justify-content-center pt-2">
+                        <div class="pt-2 row justify-content-center">
                             <img src="{{ asset('img/slogan.png') }}" alt="slogan" style="width: 70vw;">
                         </div>
                     </div>
