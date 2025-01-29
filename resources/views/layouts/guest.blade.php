@@ -255,6 +255,8 @@
                         <div>Hotline : <a href="http://wa.me/6282242221330" class="text-dark" target="_blank"
                                 style="text-decoration: none"><i class="fab fa-whatsapp"></i> 0822 4222 1330</a>
                         </div>
+                        <div>Jumlah Pengunjung Hari Ini : <b>{{ $dayCount }}</b></div>
+                        <div>Total Pengunjung Website : <b>{{ $visitorCount }}</b></div>
                     </div>
                     <div class="mb-1 col-12 col-md-5 col-sm-5">
                         <iframe

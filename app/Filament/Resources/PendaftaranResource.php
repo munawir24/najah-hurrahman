@@ -41,7 +41,7 @@ class PendaftaranResource extends Resource
                         ->maxLength(255),
                     Forms\Components\DatePicker::make('tgl_passport')
                         ->required(),
-                    Forms\Components\TextInput::make('tampat_passport')
+                    Forms\Components\TextInput::make('tempat_passport')
                         ->required()
                         ->maxLength(255),
                     Forms\Components\TextInput::make('masa_passport')
@@ -96,7 +96,7 @@ class PendaftaranResource extends Resource
                 Tables\Columns\TextColumn::make('tgl_passport')
                     ->date()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('tampat_passport')
+                Tables\Columns\TextColumn::make('tempat_passport')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('masa_passport')
                     ->sortable(),

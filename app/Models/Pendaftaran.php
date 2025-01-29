@@ -14,7 +14,7 @@ class Pendaftaran extends Model
         'paket_id',
         'no_passport',
         'tgl_passport',
-        'tampat_passport',
+        'tempat_passport',
         'masa_passport',
         'expired_passport',
         'tempat_lahir', 'tgl_lahir','alamat','city','no_hp','pekerjaan','jenis_mahrom','nama_mahrom','jenis_kamar','tgl_berangkat','status'

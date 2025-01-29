@@ -1,5 +1,8 @@
 <?php
 
+use Carbon\Carbon;
+use App\Models\Visitor;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +16,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('beranda');
+// Route::get('/', function () {
+//     return view('beranda');
+// });
+Route::get('/', function (Request $request) {
+    $ip = $request->ip();
+
+    if (!Visitor::where('ip_address', $ip)->exists()) {
+        Visitor::create(['ip_address' => $ip]);
+    }
+    $now = Visitor::whereDate('created_at', Carbon::today())->get();
+    $dayCount = count($now);
+    $visitorCount = Visitor::count();
+    return view('beranda', compact('visitorCount','dayCount'));
 });
 Route::get('/profile', function () {
     return view('profile');

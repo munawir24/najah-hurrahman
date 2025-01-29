@@ -141,7 +141,8 @@
                     style="background: linear-gradient(to bottom, #FFD500 0%, #FFD500 50%, #FFD500 100%);">
                     <div class="card-body">
                         <center>
-                            <h1 class="pt-3 text-dark" style="font-size: clamp(25px, 3vw, 40px);">TRAVEL BERIZIN PERTAMA DOMISILI DI KALIMANTAN TENGAH
+                            <h1 class="pt-3 text-dark" style="font-size: clamp(25px, 3vw, 40px);">TRAVEL BERIZIN PERTAMA
+                                DOMISILI DI KALIMANTAN TENGAH
                             </h1>
                         </center>
                         <div class="row justify-content-center" style="font-size: 14pt">
@@ -185,12 +186,14 @@
                                 <img src="{{ asset('img/haji25.jpg') }}" alt="PAKET HAJI 2025"
                                     style="width: 100%; border-radius: 10px; border: 2px double black;">
                                 <div class="pt-2 pb-2 mb-5 row justify-content-around">
-                                    <div class="p-2 text-center border col-lg-1 col-md-1 col-sm-1 col-2" style="border-radius: 50%">
+                                    <div class="p-2 text-center border col-lg-1 col-md-1 col-sm-1 col-2"
+                                        style="border-radius: 50%">
                                         <a href="telp:082242221330" target="_blank" class="text-dark"
                                             style="text-decoration: none"><i
                                                 class="fas fa-phone fa-2xl text-dark"></i></a>
                                     </div>
-                                    <div class="p-2 text-center border col-lg-1 col-md-1 col-sm-1 col-2" style="border-radius: 50%">
+                                    <div class="p-2 text-center border col-lg-1 col-md-1 col-sm-1 col-2"
+                                        style="border-radius: 50%">
                                         <a href="http://wa.me/6282242221330" target="_blank" class="text-dark"><i
                                                 class="fab fa-whatsapp fa-2xl text-success"></i></a>
                                     </div>
@@ -200,12 +203,14 @@
                                 <img src="{{ asset('img/umroh25-2.jpg') }}" alt="PAKET HAJI 2025"
                                     style="width: 100%; border-radius: 10px; border: 2px double black;">
                                 <div class="pt-2 pb-2 mb-5 row justify-content-around">
-                                    <div class="p-2 text-center border col-lg-1 col-md-1 col-sm-1 col-2" style="border-radius: 50%">
+                                    <div class="p-2 text-center border col-lg-1 col-md-1 col-sm-1 col-2"
+                                        style="border-radius: 50%">
                                         <a href="telp:082242221330" target="_blank" class="text-dark"
                                             style="text-decoration: none"><i
                                                 class="fas fa-phone fa-2xl text-dark"></i></a>
                                     </div>
-                                    <div class="p-2 text-center border col-lg-1 col-md-1 col-sm-1 col-2" style="border-radius: 50%">
+                                    <div class="p-2 text-center border col-lg-1 col-md-1 col-sm-1 col-2"
+                                        style="border-radius: 50%">
                                         <a href="http://wa.me/6282242221330" target="_blank" class="text-dark"><i
                                                 class="fab fa-whatsapp fa-2xl text-success"></i></a>
                                     </div>

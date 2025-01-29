@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('no_passport');
             $table->date('tgl_passport');
-            $table->string('tampat_passport');
+            $table->string('tempat_passport');
             $table->year('masa_passport');
             $table->year('expired_passport');
             $table->string('tempat_lahir');
