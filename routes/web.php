@@ -30,6 +30,14 @@ Route::get('/', function (Request $request) {
     $visitorCount = Visitor::count();
     return view('beranda', compact('visitorCount','dayCount'));
 });
-Route::get('/profile', function () {
-    return view('profile');
+Route::get('/profile', function (Request $request) {
+    $ip = $request->ip();
+
+    if (!Visitor::where('ip_address', $ip)->exists()) {
+        Visitor::create(['ip_address' => $ip]);
+    }
+    $now = Visitor::whereDate('created_at', Carbon::today())->get();
+    $dayCount = count($now);
+    $visitorCount = Visitor::count();
+    return view('profile', compact('visitorCount','dayCount'));
 });
