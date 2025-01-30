@@ -123,7 +123,7 @@
                                 </ol>
                             </div>
                             <div class="text-center col-6">
-                                <a href="" class="btn btn-sm btn-dark">Profil Lengkap</a>
+                                <a href="{{ url('/profile') }}" class="btn btn-sm btn-dark">Profil Lengkap</a>
                             </div>
                         </div>
                     </div>
