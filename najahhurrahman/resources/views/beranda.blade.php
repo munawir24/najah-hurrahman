@@ -161,15 +161,15 @@
                             </div>
                         </div>
                         <div class="row justify-content-between">
-                            <div class="p-1 mb-2 text-center col-lg-4 col-md-4 col-sm-4 col-12 text-bold">
+                            <div class="p-1 mb-1 text-center col-lg-4 col-md-4 col-sm-4 col-12 text-bold">
                                 <a href="https://simpu.kemenag.go.id/home/detail/650" target="_blank"
                                     class="rounded-sm btn btn-md btn-dark text-bold">CEK LEGALITAS</a>
                             </div>
-                            <div class="p-1 mb-2 text-center col-lg-4 col-md-12 col-sm-4 col-12 text-bold">
+                            <div class="p-1 mb-1 text-center col-lg-4 col-md-12 col-sm-4 col-12 text-bold">
                                 <a href="https://siskopatuh.kemenag.go.id/web/login/" target="_blank"
                                     class="rounded-sm btn btn-md btn-dark text-bold">SISKOPATUH</a>
                             </div>
-                            <div class="p-1 mb-2 text-center col-lg-4 col-md-4 col-sm-12 col-4 text-bold">
+                            <div class="p-1 mb-1 text-center col-lg-4 col-md-4 col-sm-4 col-12 text-bold">
                                 <a href="https://haji.kemenag.go.id/sidb/admin/" target="_blank"
                                     class="rounded-sm btn btn-md btn-dark text-bold">SISKOHAT</a>
                             </div>
