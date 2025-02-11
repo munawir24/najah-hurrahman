@@ -244,7 +244,7 @@
                         {{-- <li class="nav-item"><a class="nav-link" href="#">Program</a></li> --}}
                     </ul>
                     <a target="_blank" href="https://haji.kemenag.go.id/v5/" class="m-2 btn btn-orange">Cek Haji</a>
-                    {{-- <a href="{{ url('/backend/login') }}" class="btn btn-orange">Login</a> --}}
+                    {{-- <a href="{{ url('/admin/login') }}" class="btn btn-orange">Login</a> --}}
                 </div>
             </div>
         </nav>
