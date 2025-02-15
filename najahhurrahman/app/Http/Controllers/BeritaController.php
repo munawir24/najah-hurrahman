@@ -22,7 +22,7 @@ class BeritaController extends Controller
         $dayCount = count($now);
         $visitorCount = Visitor::count();
         $kategori = Category::all();
-        $data = Post::with('category')->where('status', 1)->where('created_at', 'desc')->get();
+        $data = Post::with('category')->where('status', 1)->lazyByIdDesc();
         return view('berita', compact('data', 'kategori', 'visitorCount', 'dayCount'));
     }
     public function baca(Request $request, $id)
