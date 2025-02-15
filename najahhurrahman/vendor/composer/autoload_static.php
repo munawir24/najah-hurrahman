@@ -404,8 +404,8 @@ class ComposerStaticInitbfe12996eeecb6fdc8713a9fd9d431f8
         ),
         'Spatie\\LaravelIgnition\\' => 
         array (
-            0 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/laravel-ignition',
-            1 => __DIR__ . '/..' . '/spatie/laravel-ignition/src',
+            0 => __DIR__ . '/..' . '/spatie/laravel-ignition/src',
+            1 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/laravel-ignition',
         ),
         'Spatie\\Invade\\' => 
         array (
@@ -421,8 +421,8 @@ class ComposerStaticInitbfe12996eeecb6fdc8713a9fd9d431f8
         ),
         'Spatie\\Ignition\\' => 
         array (
-            0 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/ignition',
-            1 => __DIR__ . '/..' . '/spatie/ignition/src',
+            0 => __DIR__ . '/..' . '/spatie/ignition/src',
+            1 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/ignition',
         ),
         'Spatie\\FlareClient\\' => 
         array (
@@ -801,25 +801,16 @@ class ComposerStaticInitbfe12996eeecb6fdc8713a9fd9d431f8
         'App\\Filament\\Resources\\PendaftaranResource\\Pages\\CreatePendaftaran' => __DIR__ . '/../..' . '/app/Filament/Resources/PendaftaranResource/Pages/CreatePendaftaran.php',
         'App\\Filament\\Resources\\PendaftaranResource\\Pages\\EditPendaftaran' => __DIR__ . '/../..' . '/app/Filament/Resources/PendaftaranResource/Pages/EditPendaftaran.php',
         'App\\Filament\\Resources\\PendaftaranResource\\Pages\\ListPendaftarans' => __DIR__ . '/../..' . '/app/Filament/Resources/PendaftaranResource/Pages/ListPendaftarans.php',
-        'App\\Filament\\Resources\\PermissionResource' => __DIR__ . '/../..' . '/app/Filament/Resources/PermissionResource.php',
-        'App\\Filament\\Resources\\PermissionResource\\Pages\\CreatePermission' => __DIR__ . '/../..' . '/app/Filament/Resources/PermissionResource/Pages/CreatePermission.php',
-        'App\\Filament\\Resources\\PermissionResource\\Pages\\EditPermission' => __DIR__ . '/../..' . '/app/Filament/Resources/PermissionResource/Pages/EditPermission.php',
-        'App\\Filament\\Resources\\PermissionResource\\Pages\\ListPermissions' => __DIR__ . '/../..' . '/app/Filament/Resources/PermissionResource/Pages/ListPermissions.php',
         'App\\Filament\\Resources\\PostResource' => __DIR__ . '/../..' . '/app/Filament/Resources/PostResource.php',
         'App\\Filament\\Resources\\PostResource\\Pages\\CreatePost' => __DIR__ . '/../..' . '/app/Filament/Resources/PostResource/Pages/CreatePost.php',
         'App\\Filament\\Resources\\PostResource\\Pages\\EditPost' => __DIR__ . '/../..' . '/app/Filament/Resources/PostResource/Pages/EditPost.php',
         'App\\Filament\\Resources\\PostResource\\Pages\\ListPosts' => __DIR__ . '/../..' . '/app/Filament/Resources/PostResource/Pages/ListPosts.php',
-        'App\\Filament\\Resources\\RoleResource' => __DIR__ . '/../..' . '/app/Filament/Resources/RoleResource.php',
-        'App\\Filament\\Resources\\RoleResource\\Pages\\CreateRole' => __DIR__ . '/../..' . '/app/Filament/Resources/RoleResource/Pages/CreateRole.php',
-        'App\\Filament\\Resources\\RoleResource\\Pages\\EditRole' => __DIR__ . '/../..' . '/app/Filament/Resources/RoleResource/Pages/EditRole.php',
-        'App\\Filament\\Resources\\RoleResource\\Pages\\ListRoles' => __DIR__ . '/../..' . '/app/Filament/Resources/RoleResource/Pages/ListRoles.php',
-        'App\\Filament\\Resources\\TestResource\\Pages\\CreateTest' => __DIR__ . '/../..' . '/app/Filament/Resources/TestResource/Pages/CreateTest.php',
-        'App\\Filament\\Resources\\TestResource\\Pages\\EditTest' => __DIR__ . '/../..' . '/app/Filament/Resources/TestResource/Pages/EditTest.php',
-        'App\\Filament\\Resources\\TestResource\\Pages\\ListTests' => __DIR__ . '/../..' . '/app/Filament/Resources/TestResource/Pages/ListTests.php',
+        'App\\Filament\\Resources\\PostResource\\Widgets\\PostsOverview' => __DIR__ . '/../..' . '/app/Filament/Resources/PostResource/Widgets/PostsOverview.php',
         'App\\Filament\\Resources\\UserResource' => __DIR__ . '/../..' . '/app/Filament/Resources/UserResource.php',
         'App\\Filament\\Resources\\UserResource\\Pages\\CreateUser' => __DIR__ . '/../..' . '/app/Filament/Resources/UserResource/Pages/CreateUser.php',
         'App\\Filament\\Resources\\UserResource\\Pages\\EditUser' => __DIR__ . '/../..' . '/app/Filament/Resources/UserResource/Pages/EditUser.php',
         'App\\Filament\\Resources\\UserResource\\Pages\\ListUsers' => __DIR__ . '/../..' . '/app/Filament/Resources/UserResource/Pages/ListUsers.php',
+        'App\\Filament\\Resources\\VisitorResource\\Widgets\\VisitorOverview' => __DIR__ . '/../..' . '/app/Filament/Resources/VisitorResource/Widgets/VisitorOverview.php',
         'App\\Http\\Controllers\\BeritaController' => __DIR__ . '/../..' . '/app/Http/Controllers/BeritaController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -840,6 +831,9 @@ class ComposerStaticInitbfe12996eeecb6fdc8713a9fd9d431f8
         'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\Visitor' => __DIR__ . '/../..' . '/app/Models/Visitor.php',
+        'App\\Policies\\PermissionPolicy' => __DIR__ . '/../..' . '/app/Policies/PermissionPolicy.php',
+        'App\\Policies\\RolePolicy' => __DIR__ . '/../..' . '/app/Policies/RolePolicy.php',
+        'App\\Policies\\UserPolicy' => __DIR__ . '/../..' . '/app/Policies/UserPolicy.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

@@ -9,6 +9,7 @@ use Filament\Tables;
 use Filament\Actions;
 use Filament\Forms\Set;
 use Filament\Forms\Form;
+use Widgets\PostOverview;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
@@ -32,6 +33,8 @@ use App\Filament\Resources\PostResource\Pages;
 use Filament\Tables\Actions\ForceDeleteAction;
 use Filament\Tables\Actions\ForceDeleteBulkAction;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use App\Filament\Resources\PostResource\Widgets\PostsOverview;
+use Livewire\Component;
 
 class PostResource extends Resource
 {
@@ -146,6 +149,12 @@ class PostResource extends Resource
             'index' => Pages\ListPosts::route('/'),
             'create' => Pages\CreatePost::route('/create'),
             'edit' => Pages\EditPost::route('/{record}/edit'),
+        ];
+    }
+    public static function getWidgets(): array
+    {
+        return [
+            PostsOverview::class,
         ];
     }
 }

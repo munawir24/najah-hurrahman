@@ -42,8 +42,8 @@
 
         @media (max-width: 768px) {
             .tumbnail-img {
-                width: 22vh;
-                height: 22vh;
+                width: 40vw;
+                height: 40vw;
             }
         }
     </style>

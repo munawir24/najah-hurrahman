@@ -9,6 +9,7 @@ use App\Filament\Resources\PostResource;
 use Filament\Support\Enums\IconPosition;
 use Filament\Resources\Pages\ListRecords;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\PostResource\Widgets\PostsOverview;
 
 
 class ListPosts extends ListRecords
@@ -33,7 +34,12 @@ class ListPosts extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
-
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            PostsOverview::class,
+        ];
+    }
     // protected function getViewData(): array
     // {
     //     return [

@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\PostResource\Widgets\PostsOverview;
+use App\Filament\Resources\VisitorResource\Widgets\VisitorOverview;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\Widgets;
@@ -32,7 +34,15 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->colors([
                 'primary' => Color::Amber,
+                // 'danger' => Color::Rose,
+                // 'gray' => Color::Gray,
+                // 'info' => Color::Blue,
+                // 'primary' => Color::Indigo,
+                // 'success' => Color::Emerald,
+                // 'warning' => Color::Orange,
             ])
+            // ->brandLogo(asset('img/logo.ico'))
+            // ->brandName('NAJAH HURRAHMAN')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -40,8 +50,10 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-                Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
+                VisitorOverview::class,
+                PostsOverview::class,
+                // Widgets\AccountWidget::class,
+                // Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
