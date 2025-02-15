@@ -19,7 +19,7 @@ class PaketResource extends Resource
 {
     protected static ?string $model = Paket::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-numbered-list';
 
     protected static ?string $navigationGroup = 'Umroh & Haji';
 
@@ -54,7 +54,7 @@ class PaketResource extends Resource
                 Tables\Columns\TextColumn::make('nama')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('harga')
-                    ->numeric()
+                    ->money('IDR')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

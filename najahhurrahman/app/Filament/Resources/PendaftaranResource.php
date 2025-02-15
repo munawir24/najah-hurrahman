@@ -21,7 +21,7 @@ class PendaftaranResource extends Resource
 {
     protected static ?string $model = Pendaftaran::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
     protected static ?string $navigationGroup = 'Umroh & Haji';
 
@@ -102,41 +102,44 @@ class PendaftaranResource extends Resource
                         );
                     }
                 ),
-                Tables\Columns\TextColumn::make('paket.nama')
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('nama')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('no_passport')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('tgl_passport')
-                    ->date()
+                Tables\Columns\TextColumn::make('paket.nama')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('tempat_passport')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('masa_passport')
+                Tables\Columns\TextColumn::make('paket.harga')
+                    ->money('IDR')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('expired_passport')
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('tempat_lahir')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('tgl_lahir')
-                    ->date()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('city')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('no_hp')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('pekerjaan')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('jenis_mahrom')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('nama_mahrom')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('jenis_kamar')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('tgl_berangkat')
-                    ->date()
-                    ->sortable(),
+                // Tables\Columns\TextColumn::make('no_passport')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('tgl_passport')
+                //     ->date()
+                //     ->sortable(),
+                // Tables\Columns\TextColumn::make('tempat_passport')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('masa_passport')
+                //     ->sortable(),
+                // Tables\Columns\TextColumn::make('expired_passport')
+                //     ->sortable(),
+                // Tables\Columns\TextColumn::make('tempat_lahir')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('tgl_lahir')
+                //     ->date()
+                //     ->sortable(),
+                // Tables\Columns\TextColumn::make('city')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('no_hp')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('pekerjaan')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('jenis_mahrom')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('nama_mahrom')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('jenis_kamar')
+                //     ->searchable(),
+                // Tables\Columns\TextColumn::make('tgl_berangkat')
+                //     ->date()
+                //     ->sortable(),
                 Tables\Columns\IconColumn::make('status')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')

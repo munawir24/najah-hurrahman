@@ -33,7 +33,7 @@ class LandingResource extends Resource
 {
     protected static ?string $model = Landing::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-device-tablet';
 
     protected static ?string $navigationGroup = 'Beranda';
 
