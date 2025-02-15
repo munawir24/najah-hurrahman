@@ -39,7 +39,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('../najahhurrahman'),
-            'url' => env('APP_URL') . '../najahhurrahman/najahhurrahman',
+            'url' => env('APP_URL') . 'najahhurrahman/najahhurrahman',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -70,7 +70,7 @@ return [
     */
 
     'links' => [
-        public_path('../najahhurrahman/najahhurrahman') => storage_path('../najahhurrahman/najahhurrahman/post'),
+        public_path('najahhurrahman/najahhurrahman') => storage_path('najahhurrahman/najahhurrahman/post'),
     ],
 
 ];
