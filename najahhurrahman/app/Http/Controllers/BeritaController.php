@@ -29,11 +29,11 @@ class BeritaController extends Controller
     public function baca(Request $request, $id)
     {
         $ip = $request->ip();
+        $edit = Post::where('slug', '=', $id)->first();
+        $edit->view += 1;
+        $edit->save();
         if (!Visitor::where('ip_address', $ip)->exists()) {
             Visitor::create(['ip_address' => $ip]);
-            $edit = Post::where('slug', '=', $id)->first();
-            $edit->view += 1;
-            $edit->save();
         }
         $kategori = Category::all();
         $data = Post::with('category')->where('slug', '=', $id)->first();
