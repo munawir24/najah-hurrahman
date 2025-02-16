@@ -39,48 +39,74 @@ class PendaftaranResource extends Resource
                         ->searchable()
                         ->preload(),
                     Forms\Components\TextInput::make('nama')
+                        ->label('Nama Sesuai Paspor')
                         ->required()
                         ->maxLength(255),
                     Forms\Components\TextInput::make('no_passport')
+                        ->label('Nomor Paspor')
                         ->required()
                         ->maxLength(255),
                     Forms\Components\DatePicker::make('tgl_passport')
+                        ->label('Tanggal Pengeluaran Paspor')
                         ->required(),
                     Forms\Components\TextInput::make('tempat_passport')
+                        ->label('Tempat yang Pengeluaran Paspor')
                         ->required()
                         ->maxLength(255),
                     Forms\Components\TextInput::make('masa_passport')
+                        ->label('Tahun Pembuatan Paspor	')
                         ->placeholder('YYYY'),
                     Forms\Components\TextInput::make('expired_passport')
+                        ->label('Tahun Berakhir Paspor')
                         ->placeholder('YYYY'),
                     Forms\Components\TextInput::make('tempat_lahir')
+                        ->label('Tempat Lahir')
                         ->required()
                         ->maxLength(255),
                     Forms\Components\DatePicker::make('tgl_lahir')
+                        ->label('Tanggal Lahir')
                         ->required(),
                     Forms\Components\Textarea::make('alamat')
+                        ->label('Alamat Lengkap')
                         ->required()
                         ->maxLength(65535)
                         ->columnSpanFull(),
                     Forms\Components\TextInput::make('city')
+                        ->label('Kota Sesuai KTP')
                         ->required()
                         ->maxLength(255),
                     Forms\Components\TextInput::make('no_hp')
+                        ->label('Nomor HP')
                         ->required()
                         ->maxLength(255),
                     Forms\Components\TextInput::make('pekerjaan')
+                        ->label('Pekerjaan')
                         ->required()
                         ->maxLength(255),
-                    Forms\Components\TextInput::make('jenis_mahrom')
+                    Forms\Components\Select::make('jenis_mahrom')
                         ->required()
-                        ->maxLength(255),
+                        ->options([
+                            'Tanpa Mahrom' => 'Tanpa Mahrom',
+                            'Orang Tua' => 'Orang Tua',
+                            'Pasangan' => 'Pasangan',
+                            'Saudara' => 'Saudara',
+                            'Anak' => 'Anak'
+                        ]),
                     Forms\Components\TextInput::make('nama_mahrom')
+                        ->label('Nama Mahrom')
                         ->required()
-                        ->maxLength(255),
-                    Forms\Components\TextInput::make('jenis_kamar')
+                        ->maxLength(255)
+                        ->placeholder('Jika Tanpa Mahrom Isikan -'),
+                    Forms\Components\Select::make('jenis_kamar')
                         ->required()
-                        ->maxLength(255),
+                        ->options([
+                            'Single' => 'Single',
+                            'Double' => 'Double',
+                            'Triple' => 'Triple',
+                            'Quad' => 'Quad'
+                        ]),
                     Forms\Components\DatePicker::make('tgl_berangkat')
+                        ->label('Tanggal Keberangkatan')
                         ->required(),
                     Forms\Components\Toggle::make('status')
                         ->required(),
@@ -103,10 +129,12 @@ class PendaftaranResource extends Resource
                     }
                 ),
                 Tables\Columns\TextColumn::make('nama')
+                    ->sortable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('paket.nama')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('paket.harga')
+                    ->label('Harga')
                     ->money('IDR')
                     ->sortable(),
                 // Tables\Columns\TextColumn::make('no_passport')

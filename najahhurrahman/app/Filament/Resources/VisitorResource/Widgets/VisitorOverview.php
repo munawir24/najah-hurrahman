@@ -16,11 +16,7 @@ class VisitorOverview extends BaseWidget
     protected function getStats(): array
     {
         return [
-            Stat::make('Pengunjung Hari Ini', Visitor::whereDate('created_at', Carbon::today())->get()->count())
-            ->color('success')
-            ->extraAttributes([
-                'class' => 'cursor-pointer',
-            ]),
+            Stat::make('Pengunjung Hari Ini', Visitor::whereDate('created_at', Carbon::today())->get()->count()),
             Stat::make('Jumlah Pengunjung', Visitor::count()),
         ];
     }
