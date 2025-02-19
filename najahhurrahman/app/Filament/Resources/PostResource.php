@@ -97,26 +97,25 @@ class PostResource extends Resource
                         );
                     }
                 ),
-                TextColumn::make('title')->limit(50)->searchable()->sortable(),
-                TextColumn::make('category.name')->limit(50)->searchable()->sortable(),
-                ToggleColumn::make('status'),
-                ToggleColumn::make('pin')
+                TextColumn::make('title')->limit(50)->searchable()->sortable()->label('Judul'),
+                TextColumn::make('category.name')->limit(50)->searchable()->sortable()->label('Kategori'),
+                ToggleColumn::make('status')->label('Publish'),
+                ToggleColumn::make('pin')->label('Sematkan')
             ])
             ->filters([
                 //
             ])
             ->actions([
-                EditAction::make(),
-                // DeleteAction::make()
-                //     ->requiresConfirmation()
-                //     ->action(fn(Post $record) => $record->delete())
-                ForceDeleteAction::make(),
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+                // Tables\Actions\ForceDeleteAction::make(),
+                // Tables\Actions\RestoreAction::make(),
             ])
             ->bulkActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make('delete')->requiresConfirmation()
-                        ->action(fn(Collection $records) => $records->each->delete()),
-                    ForceDeleteBulkAction::make(),
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                    // Tables\Actions\ForceDeleteBulkAction::make(),
+                    // Tables\Actions\RestoreBulkAction::make(),
                 ]),
             ]);
     }

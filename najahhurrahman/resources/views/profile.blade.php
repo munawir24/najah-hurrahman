@@ -5,7 +5,87 @@
 @endsection
 
 @section('css')
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
+    <style>
+        /* Carousel container */
+        .custom-carousel {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            /* Sesuaikan dengan kebutuhan */
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Wrapper untuk item */
+        .custom-carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Setiap item slide */
+        .custom-carousel-item {
+            min-width: 100%;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Gambar dalam carousel */
+        .custom-carousel-item img {
+            width: 100%;
+            height: 50vh;
+            /* Sesuaikan tinggi */
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Tombol navigasi */
+        .custom-carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .custom-carousel-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Posisi tombol */
+        .custom-prev {
+            left: 10px;
+        }
+
+        .custom-next {
+            right: 10px;
+        }
+
+        /* Indikator */
+        .custom-carousel-indicators {
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .custom-carousel-indicators button {
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .custom-carousel-indicators .active {
+            background-color: #FFD500;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -13,7 +93,8 @@
         <div class="row">
             <!-- /.col-md-12 -->
             <div class="col-lg-12">
-                <div class="mt-2 card" style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: clamp(12pt, 1.5vw, 14pt);">
+                <div class="mt-2 card"
+                    style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: clamp(12pt, 1.5vw, 14pt);">
                     <div class="card-body" style="text-align: justify;">
                         <center>
                             <h2>Profile</h2>
@@ -26,11 +107,11 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-4">NOMOR SK</div>
-                                    <div class="col-8">: NOMOR 794 TAHUN 2019</div>
+                                    <div class="col-8">: PPIU-135-0225 & PIHK-028-0225</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-4">TANGGAL SK</div>
-                                    <div class="col-8">: 19-09-2019</div>
+                                    <div class="col-8">: 10 Februari 2025</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-4">DIREKTUR</div>
@@ -53,7 +134,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-4">AKREDITASI</div>
-                                    <div class="col-8">: B</div>
+                                    <div class="col-8">: A</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-4">LEMBAGA AKREDITASI</div>
@@ -71,7 +152,36 @@
                         </div>
                     </div>
                 </div>
-                <div class="mt-2 card" style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: clamp(12pt, 1.5vw, 14pt);">
+                <div class="mt-2 card"
+                    style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: clamp(12pt, 1.5vw, 14pt); height: auto;">
+                    <div id="myCarousel" class="rounded-sm custom-carousel slide" data-bs-ride="carousel">
+                        <div class="custom-carousel-inner">
+                            @foreach ($sertifikat as $st)
+                                <div class="custom-carousel-item">
+                                    <img src="{{ asset('najahhurrahman/najahhurrahman/' . $st->file) }}"
+                                        alt="Gambar {{ $st->id }}" style="height: 100%">
+                                </div>
+                            @endforeach
+                        </div>
+                        <button class="custom-carousel-btn custom-prev" onclick="prevSlide()">❮</button>
+                        <button class="custom-carousel-btn custom-next" onclick="nextSlide()">❯</button>
+
+                        @php
+                            $no = 0;
+                            $no1 = 1;
+                        @endphp
+                        <div class="custom-carousel-indicators">
+                            @foreach ($sertifikat as $str)
+                                <button onclick="goToSlide({{ $no++ }})" class="active"></button>
+                            @endforeach
+                            {{-- <button onclick="goToSlide(0)" class="active"></button>
+                            <button onclick="goToSlide(1)"></button>
+                            <button onclick="goToSlide(2)"></button> --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-2 card"
+                    style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: clamp(12pt, 1.5vw, 14pt);">
                     <div class="card-body" style="text-align: justify;">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-12">
@@ -132,7 +242,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="mt-2 card" style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: clamp(12pt, 1.5vw, 14pt);">
+                <div class="mt-2 card"
+                    style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: clamp(12pt, 1.5vw, 14pt);">
                     <div class="mb-2 card-body" style="text-align: justify;">
                         <center>
                             <h2>Kelebihan PT. Najah Hurrahman</h2>
@@ -190,7 +301,41 @@
     </div>
 @endsection
 
-
-
 @section('script')
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll(".custom-carousel-item");
+            const indicators = document.querySelectorAll(".custom-carousel-indicators button");
+
+            if (index >= slides.length) currentIndex = 0;
+            else if (index < 0) currentIndex = slides.length - 1;
+            else currentIndex = index;
+
+            const newTransformValue = `translateX(-${currentIndex * 100}%)`;
+            document.querySelector(".custom-carousel-inner").style.transform = newTransformValue;
+
+            // Update indikator
+            indicators.forEach(ind => ind.classList.remove("active"));
+            indicators[currentIndex].classList.add("active");
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        function goToSlide(index) {
+            showSlide(index);
+        }
+
+        // Auto-slide setiap 3 detik
+        setInterval(() => {
+            nextSlide();
+        }, 60000);
+    </script>
 @endsection

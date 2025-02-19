@@ -8,9 +8,12 @@ use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 
 class PostsOverview extends BaseWidget
 {
-    protected static ?int $sort = -3;
+    protected static ?int $sort = -4;
 
     protected static bool $isLazy = false;
+
+    protected ?string $heading = 'Blog';
+
     protected function getStats(): array
     {
         return [

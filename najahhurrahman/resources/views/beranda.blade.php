@@ -108,7 +108,7 @@
                         <center>
                             <h2>Tentang Najah Hurrahman</h2>
                         </center>
-                        <div class="row">
+                        <div class="row justify-content-center">
                             <div class="col-md-6 col-sm-6 col-12">
                                 <p><b>PT. Najah Hurrahman</b> adalah sebuah perusahaan yang
                                     bergerak di bidang penyelenggaraan ibadah haji dan umrah. Perusahaan ini terdaftar dan

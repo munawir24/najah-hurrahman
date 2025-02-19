@@ -34,12 +34,12 @@ class ListPosts extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
-    protected function getHeaderWidgets(): array
-    {
-        return [
-            PostsOverview::class,
-        ];
-    }
+    // protected function getHeaderWidgets(): array
+    // {
+    //     return [
+    //         PostsOverview::class,
+    //     ];
+    // }
     // protected function getViewData(): array
     // {
     //     return [

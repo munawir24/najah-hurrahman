@@ -2,8 +2,6 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\Resources\PostResource\Widgets\PostsOverview;
-use App\Filament\Resources\VisitorResource\Widgets\VisitorOverview;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\Widgets;
@@ -22,9 +20,13 @@ use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use App\Filament\Resources\PostResource\Widgets\PostsOverview;
+use App\Filament\Resources\VisitorResource\Widgets\VisitorChart;
+use App\Filament\Resources\VisitorResource\Widgets\VisitorOverview;
 
 class AdminPanelProvider extends PanelProvider
 {
+
     public function panel(Panel $panel): Panel
     {
         return $panel
@@ -51,6 +53,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 VisitorOverview::class,
+                VisitorChart::class,
                 PostsOverview::class,
                 // Widgets\AccountWidget::class,
                 // Widgets\FilamentInfoWidget::class,

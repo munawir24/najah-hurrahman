@@ -251,7 +251,7 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper"
-            style="min-height: 486px; background: url('{{ asset('pictures/bg-new.jpg') }}') center repeat-y; background-size: 100%; backdrop-filter: blur(5px);">
+            style="min-height: 486px;">
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 @yield('content-header')
@@ -262,7 +262,7 @@
             <div class="content">
                 @yield('content')
                 {{-- <a id="back-to-top" href="#" class="btn btn-danger back-to-top" role="button"
-                    aria-label="Scroll to top" style="display: none">
+                    aria-label="Scroll to top" style="display: none" style="width: min-content">
                     <i class="fas fa-chevron-up"></i>
                 </a> --}}
             </div>

@@ -3,10 +3,13 @@
 namespace Filament\Actions\Exports;
 
 use Carbon\CarbonInterface;
+use Filament\Actions\Exports\Enums\ExportFormat;
 use Filament\Actions\Exports\Models\Export;
 use Filament\Forms\Components\Component;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Queue\Middleware\WithoutOverlapping;
+use OpenSpout\Common\Entity\Style\Style;
 
 abstract class Exporter
 {
@@ -25,8 +28,7 @@ abstract class Exporter
         protected Export $export,
         protected array $columnMap,
         protected array $options,
-    ) {
-    }
+    ) {}
 
     /**
      * @return array<mixed>
@@ -40,7 +42,7 @@ abstract class Exporter
         $data = [];
 
         foreach (array_keys($this->columnMap) as $column) {
-            $data[] = $columns[$column]->getState();
+            $data[] = $columns[$column]->getFormattedState();
         }
 
         return $data;
@@ -71,6 +73,11 @@ abstract class Exporter
 
     abstract public static function getCompletedNotificationBody(Export $export): string;
 
+    public static function getCompletedNotificationTitle(Export $export): string
+    {
+        return __('filament-actions::export.notifications.completed.title');
+    }
+
     /**
      * @return array<int, object>
      */
@@ -81,7 +88,7 @@ abstract class Exporter
         ];
     }
 
-    public function getJobRetryUntil(): CarbonInterface
+    public function getJobRetryUntil(): ?CarbonInterface
     {
         return now()->addDay();
     }
@@ -100,6 +107,11 @@ abstract class Exporter
     }
 
     public function getJobConnection(): ?string
+    {
+        return null;
+    }
+
+    public function getJobBatchName(): ?string
     {
         return null;
     }
@@ -131,7 +143,13 @@ abstract class Exporter
 
     public function getFileDisk(): string
     {
-        return config('filament.default_filesystem_disk');
+        $disk = config('filament.default_filesystem_disk');
+
+        if (($disk === 'public') && array_key_exists('local', config('filesystems.disks'))) {
+            return 'local';
+        }
+
+        return $disk;
     }
 
     public function getFileName(Export $export): string
@@ -151,5 +169,28 @@ abstract class Exporter
     public static function getCsvDelimiter(): string
     {
         return ',';
+    }
+
+    /**
+     * @return array<ExportFormat>
+     */
+    public function getFormats(): array
+    {
+        return [ExportFormat::Csv, ExportFormat::Xlsx];
+    }
+
+    public function getXlsxCellStyle(): ?Style
+    {
+        return null;
+    }
+
+    public function getXlsxHeaderCellStyle(): ?Style
+    {
+        return null;
+    }
+
+    public static function modifyQuery(Builder $query): Builder
+    {
+        return $query;
     }
 }

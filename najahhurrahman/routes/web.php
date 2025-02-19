@@ -7,6 +7,7 @@ use App\Models\Visitor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
+use App\Models\Sertifikat;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,8 @@ Route::get('/profile', function (Request $request) {
     if (!Visitor::where('ip_address', $ip)->exists()) {
         Visitor::create(['ip_address' => $ip]);
     }
-    return view('profile');
+    $sertifikat = Sertifikat::where('status', 1)->get();
+    return view('profile', compact('sertifikat'));
 });
 Route::get('/berita', [BeritaController::class, 'index'])->name('berita');
 Route::get('/berita/{id}', [BeritaController::class, 'baca'])->name('baca-berita');
