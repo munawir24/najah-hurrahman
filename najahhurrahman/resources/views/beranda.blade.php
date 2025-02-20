@@ -221,7 +221,7 @@ $nomor_asal = $ld->nomor;
                             @endforeach
                         </div>
                         <center>
-                            <h2>Galeri Perhalanan Haji & Umroh</h2>
+                            <h2>Galeri Perjalanan Haji & Umroh</h2>
                         </center>
                         <div class="tumbnail justify-content-center">
                             @foreach ($galery as $im)
