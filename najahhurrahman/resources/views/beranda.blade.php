@@ -188,7 +188,7 @@
                 <div class="card" style="background: rgba(255, 255, 255, 0.768)">
                     <div class="card-body">
                         <center>
-                            <h2>Paket Haji & Umrah</h2>
+                            <h2>Paket Haji & Umroh</h2>
                         </center>
                         <div class="pt-2 row justify-content-center">
                             @foreach ($landing as $ld)
