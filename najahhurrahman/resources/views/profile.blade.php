@@ -10,7 +10,7 @@
         .custom-carousel {
             position: relative;
             width: 100%;
-            max-width: 400px;
+            max-width: 500px;
             /* Sesuaikan dengan kebutuhan */
             margin: auto;
             overflow: hidden;
@@ -30,10 +30,13 @@
 
         /* Gambar dalam carousel */
         .custom-carousel-item img {
-            width: 100%;
-            height: 50vh;
+            width: 50%;
+            aspect-ratio: 1/1;
+            /* height: 100%; */
+            /* height: 50vh; */
             /* Sesuaikan tinggi */
-            object-fit: cover;
+            /* object-fit: cover; */
+            object-fit: contain;
             border-radius: 10px;
         }
 
@@ -50,7 +53,6 @@
             border-radius: 50%;
             z-index: 10;
         }
-
         .custom-carousel-btn:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
@@ -71,7 +73,6 @@
             bottom: 10px;
             width: 100%;
         }
-
         .custom-carousel-indicators button {
             width: 10px;
             height: 10px;
@@ -159,7 +160,7 @@
                             @foreach ($sertifikat as $st)
                                 <div class="custom-carousel-item">
                                     <img src="{{ asset('najahhurrahman/najahhurrahman/' . $st->file) }}"
-                                        alt="Gambar {{ $st->id }}" style="height: 100%">
+                                        alt="Gambar {{ $st->id }}" style="width: 100%;">
                                 </div>
                             @endforeach
                         </div>
