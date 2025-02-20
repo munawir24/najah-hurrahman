@@ -336,6 +336,6 @@
         // Auto-slide setiap 3 detik
         setInterval(() => {
             nextSlide();
-        }, 15000);
+        }, 10000);
     </script>
 @endsection
