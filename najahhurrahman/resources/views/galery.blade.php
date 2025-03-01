@@ -163,7 +163,6 @@
                                     }
                                 @endphp
                             @endforeach
-                            {{-- <video src="https://youtu.be/2sWZz5JAE4Y?si=eE0adTvA4vK_-lR_"></video> --}}
                         </div>
                     </div>
                 </div>

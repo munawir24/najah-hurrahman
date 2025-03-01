@@ -40,6 +40,34 @@
         .direktur {
             width: 10vw;
         }
+        .container-video {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .embed {
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        iframe {
+            width: 100%;
+            /* height: 400px; */
+            border: none;
+            border-radius: 10px;
+        }
+
+        video {
+            width: 100%;
+            /* height: 400px; */
+            border: none;
+            border-radius: 10px;
+        }
 
         @media (max-width: 1024px) {
             .tumbnail-img {
@@ -265,6 +293,30 @@ $nomor_asal = $ld->nomor;
                             @foreach ($galery as $im)
                                 <img src="{{ asset('najahhurrahman/najahhurrahman/' . $im->file) }}" alt="galery"
                                     class="tumbnail-img">
+                            @endforeach
+                        </div>
+                        <br>
+                        <div class="container-video">
+                            @foreach ($videos as $vd)
+                                @php
+                                    if (!empty($vd->file)) {
+                                        echo '<div class="embed"><video src="' .
+                                            asset('najahhurrahman/najahhurrahman/' . $vd->file) .
+                                            '" controls></video> <h5>' .
+                                            $vd->title .
+                                            '</h5><div>' .
+                                            \Carbon\Carbon::parse($vd->created_at)->translatedFormat('d F Y') .
+                                            '</div></div>';
+                                    } else {
+                                        echo '<div class="embed">' .
+                                            $vd->content .
+                                            '<h5>' .
+                                            $vd->title .
+                                            '</h5><div>' .
+                                            \Carbon\Carbon::parse($vd->created_at)->translatedFormat('d F Y') .
+                                            '</div></div>';
+                                    }
+                                @endphp
                             @endforeach
                         </div>
                         <br>

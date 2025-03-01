@@ -32,7 +32,9 @@ Route::get('/', function (Request $request) {
     }
     $landing = Landing::where('status', 1)->get();
     $galery = Galery::where('status', 1)->where('pin', 1)->get();
-    return view('beranda', compact('landing', 'galery'));
+    $videos = Video::where('status', 1)->where('pin', 1)->get();
+
+    return view('beranda', compact('landing', 'galery', 'videos'));
 });
 Route::get('/profile', function (Request $request) {
     $ip = $request->ip();
