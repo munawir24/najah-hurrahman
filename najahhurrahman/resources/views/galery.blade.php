@@ -20,15 +20,15 @@
         }
 
         .tumbnail-img {
-            width: 40vh;
-            height: 40vh;
+            width: 20vw;
+            height: 20vw;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: 5px;
         }
 
         .thumbnail-img img {
-            width: 25%;
+            width: 100%;
             aspect-ratio: 1/1;
             /* height: 100%; */
             /* height: 50vh; */
