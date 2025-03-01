@@ -49,7 +49,7 @@
 
         /* Styling untuk setiap blog card */
         .blog-card {
-            height: 186px;
+            height: 158px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -73,6 +73,11 @@
             font-size: clamp(1rem, 1.5vw, 1.3rem);
             /* font-weight: bold; */
             margin: 5px 5px 5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .blog-card p:first-of-type {
@@ -80,7 +85,7 @@
             margin: 0 5px 5px;
             color: #666;
             display: -webkit-box;
-            -webkit-line-clamp: 3;
+            -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -128,8 +133,8 @@
         }
 
         .tumbnail-img {
-            width: 75px;
-            height: 75px;
+            width: 100%;
+            /* height: 75px; */
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: 2px;
@@ -137,8 +142,13 @@
 
         .thumbnail-img img {
             width: 100%;
-            height: 100%;
+            aspect-ratio: 1/1;
+            /* height: 100%; */
+            /* height: 50vh; */
+            /* Sesuaikan tinggi */
             object-fit: cover;
+            /* object-fit: contain; */
+            border-radius: 10px;
         }
 
         /* Media Queries untuk Responsiveness */
@@ -150,9 +160,9 @@
             }
 
             /* .tumbnail-img {
-                        width: 75px;
-                        height: 75px;
-                    } */
+                                width: 75px;
+                                height: 75px;
+                            } */
         }
 
         @media (max-width: 768px) {
@@ -167,9 +177,9 @@
             }
 
             /* .tumbnail-img {
-                        width: 75px;
-                        height: 75px;
-                    } */
+                                width: 75px;
+                                height: 75px;
+                            } */
 
         }
     </style>
@@ -193,12 +203,16 @@
                 @foreach ($data as $dt)
                     <article class="blog-card" data-category="{{ $dt->category->slug }}">
                         <div class="p-2 row">
-                            <div class="p-2 col-lg-4 col-md-4 col-sm-4 col-3">
-                                <div class="tumbnail justify-content-center">
-                                    @foreach ($dt->getMedia('img') as $media)
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-3">
+                                <div class="tumbnail">
+                                    {{-- @foreach ($dt->getMedia('img') as $media)
                                         <img src="{{ $media->getUrl() }}" alt="{{ $dt->title }}" class="tumbnail-img"
                                             style="visibility: visible; display: block;">
-                                    @endforeach
+                                    @endforeach --}}
+                                    @if ($media = $dt->getMedia('img')->first())
+                                        <img src="{{ $media->getUrl() }}" alt="{{ $dt->title }}" class="tumbnail-img"
+                                            style="visibility: visible; display: block;">
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-lg-8 col-md-8 col-sm-8 col-9">
@@ -223,7 +237,8 @@
         // Filter blog posts by category
         document.addEventListener('DOMContentLoaded', function() {
             const categoryLinks = document.querySelectorAll('.blog-nav ul li a');
-            const blogCards = document.querySelectorAll('.blog-card');0
+            const blogCards = document.querySelectorAll('.blog-card');
+            0
 
             categoryLinks.forEach(link => {
                 link.addEventListener('click', function(e) {

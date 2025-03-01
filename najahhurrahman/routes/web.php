@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
 use App\Models\Sertifikat;
+use App\Models\Video;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,7 @@ Route::get('/', function (Request $request) {
         Visitor::create(['ip_address' => $ip]);
     }
     $landing = Landing::where('status', 1)->get();
-    $galery = Galery::where('status', 1)->get();
+    $galery = Galery::where('status', 1)->where('pin', 1)->get();
     return view('beranda', compact('landing', 'galery'));
 });
 Route::get('/profile', function (Request $request) {
@@ -41,6 +42,16 @@ Route::get('/profile', function (Request $request) {
     }
     $sertifikat = Sertifikat::where('status', 1)->get();
     return view('profile', compact('sertifikat'));
+});
+Route::get('/galery', function (Request $request) {
+    $ip = $request->ip();
+
+    if (!Visitor::where('ip_address', $ip)->exists()) {
+        Visitor::create(['ip_address' => $ip]);
+    }
+    $images = Galery::where('status', 1)->get();
+    $videos = Video::where('status', 1)->orderBy('updated_at', 'desc')->get();
+    return view('galery', compact('images', 'videos'));
 });
 Route::get('/berita', [BeritaController::class, 'index'])->name('berita');
 Route::get('/berita/{id}', [BeritaController::class, 'baca'])->name('baca-berita');

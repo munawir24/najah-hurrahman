@@ -238,6 +238,9 @@
                         <li class="nav-item {{ request()->is('profile') ? 'active' : '' }}"><a
                                 class="nav-link {{ request()->is('profile') ? 'active' : '' }}"
                                 href="{{ url('/profile') }}">Profil</a></li>
+                        <li class="nav-item {{ request()->is('galery') ? 'active' : '' }}"><a
+                                class="nav-link {{ request()->is('galery') ? 'active' : '' }}"
+                                href="{{ url('/galery') }}">Galery</a></li>
                         <li class="nav-item {{ request()->is('berita') ? 'active' : '' }}"><a
                                 class="nav-link {{ request()->is('berita') ? 'active' : '' }}"
                                 href="{{ url('/berita') }}">Berita</a></li>
@@ -250,8 +253,7 @@
         </nav>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper"
-            style="min-height: 486px;">
+        <div class="content-wrapper" style="min-height: 486px;">
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 @yield('content-header')

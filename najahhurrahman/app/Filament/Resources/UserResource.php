@@ -10,6 +10,7 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Resources\Pages\Page;
+use Filament\Forms\Components\Card;
 use Illuminate\Support\Facades\Hash;
 use Filament\Tables\Contracts\HasTable;
 use Illuminate\Database\Eloquent\Builder;
@@ -30,6 +31,7 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
+                Card::make()->schema([
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
@@ -53,6 +55,7 @@ class UserResource extends Resource
                     ->multiple()
                     ->relationship('roles', 'name')
                     ->preload()
+                ])
             ]);
     }
 

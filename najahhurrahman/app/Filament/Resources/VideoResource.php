@@ -5,23 +5,24 @@ namespace App\Filament\Resources;
 use stdClass;
 use Filament\Forms;
 use Filament\Tables;
-use App\Models\Galery;
+use App\Models\Video;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Card;
+use Filament\Forms\Components\Toggle;
 use Filament\Tables\Contracts\HasTable;
+use Filament\Tables\Columns\ToggleColumn;
 use Illuminate\Database\Eloquent\Builder;
-use App\Filament\Resources\GaleryResource\Pages;
+use App\Filament\Resources\VideoResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\GaleryResource\RelationManagers;
+use App\Filament\Resources\VideoResource\RelationManagers;
 
-class GaleryResource extends Resource
+class VideoResource extends Resource
 {
-    protected static ?string $model = Galery::class;
+    protected static ?string $model = Video::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-photo';
-
+    protected static ?string $navigationIcon = 'heroicon-o-film';
     protected static ?string $navigationGroup = 'Beranda';
 
 
@@ -30,10 +31,17 @@ class GaleryResource extends Resource
         return $form
             ->schema([
                 Card::make()->schema([
-                    Forms\Components\FileUpload::make('file')
+                    Forms\Components\TextInput::make('title')
                         ->required()
-                        ->image(),
+                        ->maxLength(255),
+                    Forms\Components\FileUpload::make('file')
+                        ->directory('video'),
+                    Forms\Components\Textarea::make('content')
+                        ->autosize(),
                     Forms\Components\Toggle::make('status')
+                        ->label('Publish')
+                        ->required(),
+                    Forms\Components\Toggle::make('pin')
                         ->required(),
                 ])
             ]);
@@ -53,9 +61,13 @@ class GaleryResource extends Resource
                         );
                     }
                 ),
-                Tables\Columns\ImageColumn::make('file'),
-                Tables\Columns\ToggleColumn::make('status')->label('Publish'),
-                Tables\Columns\ToggleColumn::make('pin')->label('Sematkan'),
+                Tables\Columns\TextColumn::make('title')
+                    ->label('Judul')
+                    ->searchable(),
+                // Tables\Columns\TextColumn::make('file')
+                //     ->searchable(),
+                ToggleColumn::make('status')->label('Publish'),
+                ToggleColumn::make('pin')->label('Sematkan')
             ])
             ->filters([
                 //
@@ -63,14 +75,10 @@ class GaleryResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
-                // Tables\Actions\ForceDeleteAction::make(),
-                // Tables\Actions\RestoreAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
-                    // Tables\Actions\ForceDeleteBulkAction::make(),
-                    // Tables\Actions\RestoreBulkAction::make(),
                 ]),
             ]);
     }
@@ -85,9 +93,9 @@ class GaleryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListGaleries::route('/'),
-            'create' => Pages\CreateGalery::route('/create'),
-            'edit' => Pages\EditGalery::route('/{record}/edit'),
+            'index' => Pages\ListVideos::route('/'),
+            'create' => Pages\CreateVideo::route('/create'),
+            'edit' => Pages\EditVideo::route('/{record}/edit'),
         ];
     }
 }

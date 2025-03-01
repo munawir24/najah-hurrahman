@@ -38,12 +38,34 @@
                 width: 30vh;
                 height: 30vh;
             }
+
+            .thumbnail-img img {
+                width: 33%;
+                aspect-ratio: 1/1;
+                /* height: 100%; */
+                /* height: 50vh; */
+                /* Sesuaikan tinggi */
+                /* object-fit: cover; */
+                object-fit: contain;
+                border-radius: 10px;
+            }
         }
 
         @media (max-width: 768px) {
             .tumbnail-img {
                 width: 40vw;
                 height: 40vw;
+            }
+
+            .thumbnail-img img {
+                width: 50%;
+                aspect-ratio: 1/1;
+                /* height: 100%; */
+                /* height: 50vh; */
+                /* Sesuaikan tinggi */
+                /* object-fit: cover; */
+                object-fit: contain;
+                border-radius: 10px;
             }
         }
     </style>

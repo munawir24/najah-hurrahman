@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Galery extends Model
+class Video extends Model
 {
     use HasFactory;
-    protected $fillable = ['file', 'status','pin'];
+    protected $fillable = ['title', 'file', 'content', 'status', 'pin'];
 }

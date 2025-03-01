@@ -37,18 +37,13 @@
             background-color: #FFD500;
         }
 
-        /* .card-body img {
-                                                                                        width: 30vh;
-                                                                                        height: 30vh;
-                                                                                        border-radius: 10px;
-                                                                                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                                                                                        margin: 5px;
-                                                                                    } */
-
         .tumbnail {
-            display: flex;
-            width: 100%;
-            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 80%;
+            /* padding: 10px; */
+            margin: auto;
         }
 
         .justify-content-center {
@@ -59,46 +54,22 @@
         }
 
         .tumbnail-img {
-            width: 40vh;
-            height: 40vh;
+            /* background: #fff; */
+            width: 100%;
+            aspect-ratio: 1/1;
+            margin: 0px;
+            padding: 0px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .thumbnail-img img {
-            width: 100%;
-            height: 100%;
+            /* height: 33vw; */
+            border: none;
+            border-radius: 10px;
             object-fit: cover;
         }
 
-
-        /* Media Queries untuk Responsiveness */
-        @media (max-width: 1024px) {
-            .tumbnail-img {
-                width: 35vh;
-                height: 35vh;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .tumbnail-img {
-                width: 25vh;
-                height: 25vh;
-            }
-        }
-
-        /* div#social-links {
-                                margin: 5px auto;
-                                max-width: auto;
-                            }
-
-                            div#social-links ul li {
-                                display: inline-flex;
-                                align-items: flex-end;
-                                align-content: flex-end;
-                                justify-content: end;
-                            } */
         div#social-links {
             margin: 5px auto;
             max-width: auto;
@@ -139,6 +110,7 @@
             transition: color 0.3s ease;
             /* Animasi perubahan warna teks */
         }
+
 
         div#social-links ul li a::before {
             content: '';
@@ -189,6 +161,22 @@
         .fa-whatsapp {
             color: green;
         }
+
+        @media (max-width: 1024px) {
+            .tumbnail {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                max-width: 60%;
+                /* margin: auto; */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tumbnail {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                max-width: 100%;
+                /* margin: none; */
+            }
+        }
     </style>
 @endsection
 
@@ -207,7 +195,7 @@
         </div>
 
         <main class="container">
-            <div class="mt-2 card" style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: 14pt;">
+            <div class="mt-2 card" style="background: rgba(255, 255, 255, 0.768); font-family: Arial; font-size: 14pt; width: 100%;">
                 <div class="text-center card-header" style="border-bottom: none"><b>{{ Str::title($data->title) }}</b>
                 </div>
                 <div class="card-body" style="text-align: justify;">
@@ -215,20 +203,24 @@
                         <small>{{ \Carbon\Carbon::parse($data->created_at)->translatedFormat('l, d F Y') }}</small>
                     </p>
                     {{-- {!! clean($data->content) !!} --}}
-                    <div class="tumbnail justify-content-center">
+                    <div class="tumbnail">
                         @foreach ($data->getMedia('img') as $media)
-                            <img src="{{ $media->getUrl() }}" alt="{{ $data->title }}" class="tumbnail-img">
+                            <div class="tumbnail-img">
+                                <img src="{{ $media->getUrl() }}" alt="{{ $data->title }}" class="tumbnail-img">
+                            </div>
                         @endforeach
                     </div>
                     <br>
-                    {!! str($data->content)->sanitizeHtml() !!}
+                    {{-- {!! str($data->content)->sanitizeHtml() !!} --}}
+                    {!! $data->content !!}
                 </div>
                 <div class="card-footer" style="border-top: none">
                     <div class="row">
                         <div class="col-4">
                             <div class="row">
                                 <div class="col-12">
-                                    <i class="fas fa-eye" style="background-color: #ccc; border-radius: 50%;
+                                    <i class="fas fa-eye"
+                                        style="background-color: #ccc; border-radius: 50%;
                                      text-align: center; vertical-align: middle;width: 40px; height: 40px;
                                     margin: 3px; padding: 10px;"></i>{{ $data->view }}
                                 </div>
