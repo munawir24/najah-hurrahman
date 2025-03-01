@@ -253,8 +253,8 @@ $nomor_asal = $ld->nomor;
                         </div>
                         <br>
                         <div class="m-1 row justify-content-center" style="background: #efefef66; border-radius: 10px;">
-                            <img src="{{ asset('img/slogan.png') }}" alt="slogan" style="width: 60vw;">
-                            <img src="{{ asset('img/rahman-jas-bg.png') }}" alt="slogan" style="width: 15vw;">
+                            <img src="{{ asset('img/slogan.png') }}" alt="slogan" style="width: 50vw;">
+                            <img src="{{ asset('img/rahman-jas-bg.png') }}" alt="slogan" style="width: 10vw;">
                         </div>
                     </div>
                 </div>
