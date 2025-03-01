@@ -20,8 +20,8 @@
         }
 
         .tumbnail-img {
-            width: 20vw;
-            height: 20vw;
+            width: 15vw;
+            height: 15vw;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: 5px;
@@ -40,12 +40,12 @@
 
         @media (max-width: 1024px) {
             .tumbnail-img {
-                width: 30vh;
-                height: 30vh;
+                width: 30vw;
+                height: 30vw;
             }
 
             .thumbnail-img img {
-                width: 33%;
+                width: 100%;
                 aspect-ratio: 1/1;
                 /* height: 100%; */
                 /* height: 50vh; */
