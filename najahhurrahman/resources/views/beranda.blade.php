@@ -33,6 +33,14 @@
             object-fit: cover;
         }
 
+        .slogan {
+            width: 50vw;
+        }
+
+        .direktur {
+            width: 10vw;
+        }
+
         @media (max-width: 1024px) {
             .tumbnail-img {
                 width: 30vw;
@@ -66,6 +74,14 @@
                 /* object-fit: cover; */
                 object-fit: contain;
                 border-radius: 10px;
+            }
+
+            .slogan {
+                width: 60vw;
+            }
+
+            .direktur {
+                width: 15vw;
             }
         }
     </style>
@@ -253,8 +269,8 @@ $nomor_asal = $ld->nomor;
                         </div>
                         <br>
                         <div class="m-1 row justify-content-center" style="background: #efefef66; border-radius: 10px;">
-                            <img src="{{ asset('img/slogan.png') }}" alt="slogan" style="width: 50vw;">
-                            <img src="{{ asset('img/rahman-jas-bg.png') }}" alt="slogan" style="width: 10vw;">
+                            <img src="{{ asset('img/slogan.png') }}" alt="slogan" class="slogan">
+                            <img src="{{ asset('img/rahman-jas-bg.png') }}" alt="direktur" class="direktur">
                         </div>
                     </div>
                 </div>
