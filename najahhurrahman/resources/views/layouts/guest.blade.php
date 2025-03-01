@@ -244,10 +244,10 @@
                         <li class="nav-item {{ request()->is('berita') ? 'active' : '' }}"><a
                                 class="nav-link {{ request()->is('berita') ? 'active' : '' }}"
                                 href="{{ url('/berita') }}">Berita</a></li>
-                        {{-- <li class="nav-item"><a class="nav-link" href="#">Program</a></li> --}}
+                        <li class="nav-item"><a class="nav-link" target="_blank"
+                                href="https://haji.kemenag.go.id/v5/">Cek Haji</a></li>
+                        <li class="nav-item"><a href="{{ url('/admin/login') }}" class="nav-link">Login</a></li>
                     </ul>
-                    <a target="_blank" href="https://haji.kemenag.go.id/v5/" class="m-2 btn btn-orange">Cek Haji</a>
-                    <a href="{{ url('/admin/login') }}" class="btn btn-orange">Login</a>
                 </div>
             </div>
         </nav>
