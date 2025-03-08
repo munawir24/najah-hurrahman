@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class ExportController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function formulir($id)
     {
         $no = 1;
