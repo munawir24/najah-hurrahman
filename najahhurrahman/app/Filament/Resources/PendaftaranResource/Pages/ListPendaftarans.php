@@ -49,7 +49,7 @@ class ListPendaftarans extends ListRecords
                     })->where('status', 0)
                         ->tap(fn() => $this->dispatch('refresh'))
                 ),
-            'Sudah Berangkat' => Components\Tab::make()->badge(Pendaftaran::query()->where('status', true)->count())->modifyQueryUsing(fn(Builder $query) => $query->where('status', false)->tap(fn() => $this->dispatch('refresh'))),
+            'Sudah Berangkat' => Components\Tab::make()->badge(Pendaftaran::query()->where('status', true)->count())->modifyQueryUsing(fn(Builder $query) => $query->where('status', true)->tap(fn() => $this->dispatch('refresh'))),
         ];
     }
 }

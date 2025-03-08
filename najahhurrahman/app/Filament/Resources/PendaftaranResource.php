@@ -10,6 +10,7 @@ use Filament\Tables\Table;
 use App\Models\Pendaftaran;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Card;
+use Filament\Tables\Actions\Action;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Contracts\HasTable;
 use Filament\Forms\Components\DatePicker;
@@ -62,6 +63,14 @@ class PendaftaranResource extends Resource
                     Forms\Components\TextInput::make('expired_passport')
                         ->label('Tahun Berakhir Paspor')
                         ->placeholder('YYYY'),
+                    Forms\Components\Radio::make('jenis_kelamin')
+                        ->options([
+                            'L' => 'Pria',
+                            'P' => 'Wanita',
+                        ])
+                        ->inline()
+                        ->inlineLabel(false)
+                        ->required(),
                     Forms\Components\TextInput::make('tempat_lahir')
                         ->label('Tempat Lahir')
                         ->required()
@@ -185,6 +194,10 @@ class PendaftaranResource extends Resource
                 TglBerangkatFilter::make(),
             ])
             ->actions([
+                Action::make('Print')
+                    ->icon('heroicon-o-printer')
+                    ->url(fn(Pendaftaran $record) => route('export-formulir', $record))
+                    ->openUrlInNewTab(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
                 // Tables\Actions\ForceDeleteAction::make(),

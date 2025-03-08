@@ -1,14 +1,15 @@
 <?php
 
 use Carbon\Carbon;
+use App\Models\Video;
 use App\Models\Galery;
 use App\Models\Landing;
 use App\Models\Visitor;
+use App\Models\Sertifikat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
-use App\Models\Sertifikat;
-use App\Models\Video;
+use App\Http\Controllers\ExportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,3 +58,4 @@ Route::get('/galery', function (Request $request) {
 });
 Route::get('/berita', [BeritaController::class, 'index'])->name('berita');
 Route::get('/berita/{id}', [BeritaController::class, 'baca'])->name('baca-berita');
+Route::get('/export-formulir/{id}', [ExportController::class, 'formulir'])->name('export-formulir');

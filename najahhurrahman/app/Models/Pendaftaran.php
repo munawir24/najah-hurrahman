@@ -17,6 +17,7 @@ class Pendaftaran extends Model
         'tempat_passport',
         'masa_passport',
         'expired_passport',
+        'jenis_kelamin',
         'tempat_lahir', 'tgl_lahir','alamat','city','no_hp','pekerjaan','jenis_mahrom','nama_mahrom','jenis_kamar','tgl_berangkat','status'
     ];
     public function paket(): BelongsTo{
