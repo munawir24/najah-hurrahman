@@ -18,7 +18,7 @@
     </style>
 </head>
 
-<body>
+<body onload="window.print()">
     <div class="wrapper" style="font-family: Arial">
         <div class="card" style="border: none">
             <div class="card-body">
