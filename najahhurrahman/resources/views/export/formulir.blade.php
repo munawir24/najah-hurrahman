@@ -155,7 +155,7 @@
                     </div>
                 </div>
                 <br>
-                <div class="row" style="text-align: justify; font-size: 10pt;">
+                <div class="row" style="text-align: justify; font-size: 12pt;">
                     <div class="col-12">
                         <b>Dengan ini saya menyatakan mendaftarkan diri mengikuti program perjalanan Ibadah umroh/haji
                             plus bersama PT. NAJAH HURRAHMAN Tour & Travel dan selanjutmya akan menaati syarat dan
