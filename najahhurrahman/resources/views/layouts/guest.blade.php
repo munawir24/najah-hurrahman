@@ -301,7 +301,7 @@
                                     -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><i
                                 class="fab fa-instagram fa-2xl"></i></a></div>
                     <div class="text-center col-md-1 col-sm-1 col-2"><a class="nav-link text-dark"
-                            href="https://www.tiktok.com/@najah.hurrahman" target="_blank">
+                            href="https://www.tiktok.com/najah_hurrahman1" target="_blank">
                             <i class="fa-brands fa-tiktok fa-2xl"></i></a></div>
                     <div class="text-center col-md-1 col-sm-1 col-2"><a class="nav-link text-primary"
                             href="https://web.facebook.com/100011636550477" target="_blank"><i
