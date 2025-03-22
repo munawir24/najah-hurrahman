@@ -188,12 +188,12 @@
                         <div class="row">
                             <div class="col-12">
                                 <ul>
-                                    <li>
+                                    <!-- <li>
                                         <div class="row">
                                             <div class="col-4">Bank Mandiri Syariah</div>
                                             <div class="col-8">: No Rek 75454577</div>
                                         </div>
-                                    </li>
+                                    </li> -->
                                     <li>
                                         <div class="row">
                                             <div class="col-4">Bank BRI Rupiah</div>
